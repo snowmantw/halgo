@@ -1,6 +1,9 @@
 module Main where
 
-import Lib
+import System.IO (putStrLn)
+import Ex0201 (sampleSuffixes)
+import Control.Monad (void)
 
 main :: IO ()
-main = someFunc
+main = void $ return sampleSuffixes
+
