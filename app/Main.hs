@@ -2,14 +2,19 @@ module Main where
 
 import System.IO (putStr)
 import Ex0201 (sampleSuffixes, stressSuffixes)
-import Control.Monad (mapM_)
+import Control.Monad (mapM_, void)
 import Text.Show (show)
 
 main :: IO ()
+main = void $ return stressSuffixes
+
+{- With message printing
+ -
 main = do
   putStr "["
   mapM_ (putStr.show) stressSuffixes
   putStr "]\n"
+-}
 
 -- ** Wrong version **
 --

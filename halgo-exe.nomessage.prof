@@ -1,0 +1,28 @@
+	Wed Aug  9 16:47 2017 Time and Allocation Profiling Report  (Final)
+
+	   halgo-exe +RTS -N -p -RTS
+
+	total time  =        0.01 secs   (6 ticks @ 1000 us, 1 processor)
+	total alloc =      64,304 bytes  (excludes profiling overheads)
+
+COST CENTRE MODULE           SRC              %time %alloc
+
+MAIN        MAIN             <built-in>       100.0   38.3
+CAF         GHC.Event.Thread <entire-module>    0.0    1.9
+CAF         GHC.IO.Handle.FD <entire-module>    0.0   53.7
+CAF         GHC.IO.Encoding  <entire-module>    0.0    4.5
+
+
+                                                                        individual      inherited
+COST CENTRE MODULE                SRC                no.     entries  %time %alloc   %time %alloc
+
+MAIN        MAIN                  <built-in>          44          0  100.0   38.3   100.0  100.0
+ CAF        GHC.Conc.Signal       <entire-module>     82          0    0.0    1.0     0.0    1.0
+ CAF        GHC.IO.Encoding       <entire-module>     76          0    0.0    4.5     0.0    4.5
+ CAF        GHC.IO.Encoding.Iconv <entire-module>     74          0    0.0    0.4     0.0    0.4
+ CAF        GHC.IO.Handle.FD      <entire-module>     66          0    0.0   53.7     0.0   53.7
+ CAF        GHC.Event.KQueue      <entire-module>     57          0    0.0    0.1     0.0    0.1
+ CAF        GHC.Event.Poll        <entire-module>     54          0    0.0    0.1     0.0    0.1
+ CAF        GHC.Event.Thread      <entire-module>     53          0    0.0    1.9     0.0    1.9
+ CAF:main1  Main                  <no location info>  86          0    0.0    0.0     0.0    0.0
+  main      Main                  app/Main.hs:9:1-35  88          1    0.0    0.0     0.0    0.0

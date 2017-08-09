@@ -1,0 +1,44 @@
+	Wed Aug  9 16:39 2017 Time and Allocation Profiling Report  (Final)
+
+	   halgo-exe +RTS -N -p -RTS
+
+	total time  =        0.01 secs   (10 ticks @ 1000 us, 1 processor)
+	total alloc =   9,173,320 bytes  (excludes profiling overheads)
+
+COST CENTRE    MODULE           SRC                           %time %alloc
+
+main           Main             app/Main.hs:(9,1)-(12,14)      50.0   78.6
+MAIN           MAIN             <built-in>                     30.0    0.6
+CAF            GHC.IO.Handle.FD <entire-module>                10.0    0.4
+stressSuffixes Ex0201           src/Ex0201.hs:38:1-45          10.0    0.2
+doSuffixes     Ex0201           src/Ex0201.hs:(17,1)-(18,47)    0.0   20.1
+
+
+                                                                                           individual      inherited
+COST CENTRE          MODULE                SRC                          no.     entries  %time %alloc   %time %alloc
+
+MAIN                 MAIN                  <built-in>                    55          0   30.0    0.6   100.0  100.0
+ CAF                 GHC.Conc.Signal       <entire-module>               95          0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.Encoding       <entire-module>               89          0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.Encoding.Iconv <entire-module>               87          0    0.0    0.0     0.0    0.0
+ CAF                 GHC.IO.Handle.FD      <entire-module>               79          0   10.0    0.4    10.0    0.4
+ CAF                 GHC.Event.KQueue      <entire-module>               68          0    0.0    0.0     0.0    0.0
+ CAF                 GHC.Event.Poll        <entire-module>               65          0    0.0    0.0     0.0    0.0
+ CAF                 GHC.Event.Thread      <entire-module>               64          0    0.0    0.0     0.0    0.0
+ CAF:main1           Main                  <no location info>           108          0    0.0    0.0     0.0    0.0
+  main               Main                  app/Main.hs:(9,1)-(12,14)    110          1    0.0    0.0     0.0    0.0
+ CAF:main2           Main                  <no location info>           107          0    0.0    0.0     0.0    0.0
+  main               Main                  app/Main.hs:(9,1)-(12,14)    119          0    0.0    0.0     0.0    0.0
+ CAF:main4           Main                  <no location info>           106          0    0.0    0.0     0.0    0.0
+  main               Main                  app/Main.hs:(9,1)-(12,14)    112          0    0.0    0.0     0.0    0.0
+ CAF:stressSuffixes  Ex0201                src/Ex0201.hs:38:1-14        105          0    0.0    0.0     0.0   20.1
+  stressSuffixes     Ex0201                src/Ex0201.hs:38:1-45        113          1    0.0    0.0     0.0   20.1
+   suffixes          Ex0201                src/Ex0201.hs:14:1-32        114          1    0.0    0.0     0.0   20.1
+    doSuffixes       Ex0201                src/Ex0201.hs:(17,1)-(18,47) 115        257    0.0   20.1     0.0   20.1
+ CAF:stressSuffixes1 Ex0201                <no location info>           104          0    0.0    0.0     0.0    0.2
+  stressSuffixes     Ex0201                src/Ex0201.hs:38:1-45        116          0    0.0    0.2     0.0    0.2
+ CAF:stressSuffixes2 Ex0201                <no location info>           103          0    0.0    0.0     0.0    0.0
+  stressSuffixes     Ex0201                src/Ex0201.hs:38:1-45        117          0    0.0    0.0     0.0    0.0
+ CAF:stressSuffixes3 Ex0201                <no location info>           102          0    0.0    0.0    10.0    0.0
+  stressSuffixes     Ex0201                src/Ex0201.hs:38:1-45        118          0   10.0    0.0    10.0    0.0
+ main                Main                  app/Main.hs:(9,1)-(12,14)    111          0   50.0   78.6    50.0   78.6
