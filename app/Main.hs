@@ -1,12 +1,27 @@
 module Main where
 
 import System.IO (putStr)
-import Ex0201 (sampleSuffixes, stressSuffixes)
+-- import Ex0201 (sampleSuffixes, stressSuffixes)
+import Tree (Tree(..), left, morris)
 import Control.Monad (mapM_, void)
 import Text.Show (show)
+import Debug.Trace (trace)
+import SieveEratosthenes (exam)
+
+treeA :: Tree Int
+treeA = Tree 0 (Leaf 1) treeB
+
+treeB :: Tree Int
+treeB = Tree 3 (Leaf 4) (Leaf 5)
+
+treeC :: Tree Int
+treeC = Tree 97 (Leaf 98) (Leaf 99)
+
+treeD :: Tree Int
+treeD = Tree (-1) treeA treeC
 
 main :: IO ()
-main = void $ return stressSuffixes
+main = putStr "Sieve Eratosthenes" >> exam
 
 {- With message printing
  -
