@@ -21,7 +21,7 @@ treeD :: Tree Int
 treeD = Tree (-1) treeA treeC
 
 main :: IO ()
-main = putStr "Sieve Eratosthenes" >> exam
+main = putStrLn "Sieve Eratosthenes" >> exam (2^10)
 
 {- With message printing
  -
